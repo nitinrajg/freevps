@@ -81,11 +81,10 @@ jobs:
         vcpkgGitCommitId: ${{ env.VCPKG_COMMIT_ID }}
 
     - name: Install vcpkg dependencies
-  shell: bash
-  run: |
-    set -e
-    $VCPKG_ROOT/vcpkg install --x-install-root="$VCPKG_ROOT/installed" || (cat $VCPKG_ROOT/buildtrees/python3/autoconf-x64-linux-err.log && exit 1)
-
+      shell: bash
+      run: |
+        set -e
+        $VCPKG_ROOT/vcpkg install --x-install-root="$VCPKG_ROOT/installed" || (cat $VCPKG_ROOT/buildtrees/python3/autoconf-x64-linux-err.log && exit 1)
 
     - name: Install Rust toolchain
       uses: dtolnay/rust-toolchain@v1
