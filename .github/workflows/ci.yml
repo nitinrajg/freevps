@@ -67,7 +67,10 @@ jobs:
                libxdo-dev \
                libxfixes-dev \
                nasm \
-               wget
+               wget \
+               autoconf \
+               automake \
+               libtool
             ;;
         esac
 
